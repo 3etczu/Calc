@@ -1,8 +1,10 @@
 package com.example.calc
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -17,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_Calc)
         setContentView(R.layout.activity_main)
+
+        var buttonSettings: Button = findViewById(R.id.button_about)
+        buttonSettings.setOnClickListener {
+            val intent = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(intent)}
 
         lateinit var b0: TextView
         lateinit var b1: TextView
@@ -38,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         lateinit var bBack: TextView
         lateinit var bravn: TextView
         lateinit var bdot: TextView
-        lateinit var bpres: TextView
 
 
         b0 = findViewById(R.id.btn_0)
@@ -61,7 +67,6 @@ class MainActivity : AppCompatActivity() {
         bBack = findViewById(R.id.btn_back)
         bravn = findViewById(R.id.btn_ravn)
         bdot = findViewById(R.id.btn_dot)
-        bpres = findViewById(R.id.btn_pres)
 
 
         b0.setOnClickListener { setTextFields("0") }
@@ -81,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         bscobL.setOnClickListener { setTextFields("(") }
         bscobR.setOnClickListener { setTextFields(")") }
         bdot.setOnClickListener{setTextFields(".")}
-        bpres.setOnClickListener{setTextFields("%")}
+
         bAC.setOnClickListener {
             val pole1:TextView = findViewById(R.id.math_operation)
             val pole2:TextView = findViewById(R.id.result_text)

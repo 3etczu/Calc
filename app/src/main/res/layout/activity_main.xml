@@ -24,7 +24,9 @@
         android:gravity="end"
         android:ellipsize="end"
         android:textSize="40sp"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,10 +55,7 @@
                 style="@style/NumberButton"
                 android:text="/"
                 android:id="@+id/btn_del"/>
-            <TextView
-                style="@style/NumberButton"
-                android:text="%"
-                android:id="@+id/btn_pres"/>
+
 
 
 
@@ -162,7 +161,14 @@
                 android:id="@+id/btn_ravn"/>
 
         </LinearLayout>
-
+        <Button
+            android:id="@+id/button_about"
+            style="@style/NumberButton"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:text="О нас" />
     </LinearLayout>
+
+
 
 </LinearLayout>
